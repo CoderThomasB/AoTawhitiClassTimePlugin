@@ -102,11 +102,15 @@ public class AoTawhitiClassTimePlugin extends Plugin {
         // We need to stagger the packets as the sending proses takes time
 
         getProxy().getScheduler().schedule(this, () -> {
+            // 4 is update style (color and division)
+            //                \/
             BossBar.setAction(4);
             Player.unsafe().sendPacket(BossBar);
         }, 3, TimeUnit.MILLISECONDS);
 
         getProxy().getScheduler().schedule(this, () -> {
+            //          3 is update name
+            //                \/
             BossBar.setAction(3);
             Player.unsafe().sendPacket(BossBar);
         }, 1, TimeUnit.MILLISECONDS);

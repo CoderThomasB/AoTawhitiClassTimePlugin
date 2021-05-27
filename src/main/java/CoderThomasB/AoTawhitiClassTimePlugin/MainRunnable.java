@@ -41,6 +41,7 @@ class MainRunnable implements Runnable {
             for (ProxiedPlayer Player : Owner.getProxy().getPlayers()) {
                 Owner.ServerShutdownBossBarIndicator.setAction(0);
                 Player.unsafe().sendPacket(Owner.ServerShutdownBossBarIndicator);
+                Player.sendMessage("The Server is shutting down in the next 10m!");
             }
             Owner.IsServerShutdownBossBarIndicatorVisible = true;
         }

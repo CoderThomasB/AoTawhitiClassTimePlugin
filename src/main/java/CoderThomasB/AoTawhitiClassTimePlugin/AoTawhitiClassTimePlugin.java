@@ -48,6 +48,7 @@ public class AoTawhitiClassTimePlugin extends Plugin {
         CheckPermissions();
 
         int pluginId = 11228;
+        //noinspection unused
         Metrics metrics = new Metrics(this, pluginId);
     }
 
@@ -95,7 +96,7 @@ public class AoTawhitiClassTimePlugin extends Plugin {
         if (Player.hasPermission("AoTawhitiClassTime.IgnoreDisconnect")) return;
 
         getLogger().info("Trying To kick player: " + Player.getDisplayName());
-        Player.disconnect(new TextComponent("You are not allowed play on the Ao Tawhiti Minecraft Server in class Time!\n\nIf you are using the server for an SDL or need access to it in this time pleases email thomas.booker@aotawhiti.school.nz"));
+        Player.disconnect(new TextComponent("You are can't play on the Ao Tawhiti Minecraft Server in class Time!\n\nIf you are using the server for an SDL or need access to it in this time pleases email thomas.booker@aotawhiti.school.nz"));
     }
 
     public void UpdateTitleAndColorOfBossBarForPlayer(ProxiedPlayer Player, BossBar BossBar) {

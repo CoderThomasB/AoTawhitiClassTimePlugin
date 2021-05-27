@@ -11,6 +11,7 @@ public enum TimeBlock {
     // ClassTime
     Red, Yellow, Green, Blue, Purple;
 
+    @SuppressWarnings("ConstantConditions")
     static public TimeBlock GetBlockAtTime(LocalDateTime Time) {
         if (Time.getDayOfWeek() == DayOfWeek.SATURDAY) return NoSchool;
         if (Time.getDayOfWeek() == DayOfWeek.SUNDAY) return NoSchool;

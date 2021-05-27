@@ -1,5 +1,6 @@
 package CoderThomasB.AoTawhitiClassTimePlugin;
 
+import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.chat.TextComponent;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
 import net.md_5.bungee.api.plugin.Plugin;
@@ -24,6 +25,7 @@ public class AoTawhitiClassTimePlugin extends Plugin {
     BossBar ClassBossBarIndicator;
     BossBar ServerShutdownBossBarIndicator;
     boolean IsServerShutdownBossBarIndicatorVisible = false;
+    TextComponent ServerShutdownSoonMessage;
 
     @Override
     public void onEnable() {
@@ -38,6 +40,10 @@ public class AoTawhitiClassTimePlugin extends Plugin {
         ServerShutdownBossBarIndicator.setDivision(0); // Solid
         ServerShutdownBossBarIndicator.setTitle("{\"text\":\"The Server is shutting down in the next 10m!\",\"bold\":true,\"color\":\"red\"}");
         ServerShutdownBossBarIndicator.setColor(2);
+
+        ServerShutdownSoonMessage = new TextComponent("The Server is shutting down in the next 10m!");
+        ServerShutdownSoonMessage.setColor(ChatColor.RED);
+        ServerShutdownSoonMessage.setBold(true);
 
         TheListener = new MainListener(this);
         getProxy().getPluginManager().registerListener(this, TheListener);
